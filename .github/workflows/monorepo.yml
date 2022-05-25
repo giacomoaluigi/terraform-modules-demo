@@ -166,7 +166,7 @@ jobs:
 
           ```hcl
           module "my_${{ matrix.directory }}" {
-            source = "s3::https://forto-terrform-modules-demo.s3.eu-west-1.amazonaws.com/${{ matrix.directory }}-${{ steps.new-version.outputs.result }}.zip"
+            source = "s3::https://test-tf-modules-versioning.s3.eu-west-1.amazonaws.com/${{ matrix.directory }}-${{ steps.new-version.outputs.result }}.zip"
 
             # also any inputs for the module (see below)
           }
@@ -218,7 +218,7 @@ jobs:
         run: ls -R
         working-directory: outputs
 
-      - uses: actions/github-script@v4
+      - uses: actions/github-script@v2
         with:
           script: |
             const { owner, repo } = context.repo;
