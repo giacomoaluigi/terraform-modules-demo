@@ -218,7 +218,7 @@ jobs:
         run: ls -R
         working-directory: outputs
 
-      - uses: actions/github-script@v2
+      - uses: actions/github-script@v4
         with:
           script: |
             const { owner, repo } = context.repo;
