@@ -1,4 +1,4 @@
-variable "example_variable2" {
+variable "example_variable6" {
   description = "An example variable to showcase the module release process"
   type        = bool
   default     = true
