@@ -125,7 +125,7 @@ variable "tags" {
   default     = {}
 }
 
-variable "example_test" {
+variable "example_test_test" {
   type = bool
   default = false
 }
