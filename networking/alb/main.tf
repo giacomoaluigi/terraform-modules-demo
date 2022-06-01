@@ -4,7 +4,7 @@ data "aws_caller_identity" "current" {}
 
 locals {
   tg_binding = {
-    path = "${path.module}/../../../../../../../../../../${var.project_name}/k8s/${var.cluster_name}/ingress"
+    path = "${path.module}/../../../../../../../../../../../${var.project_name}/k8s/${var.cluster_name}/ingress"
   }
 }
 
