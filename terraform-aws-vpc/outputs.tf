@@ -540,7 +540,7 @@ output "azs" {
   value       = var.azs
 }
 
-output "name" {
-  description = "The name of the VPC specified as argument to this module"
-  value       = var.name
-}
+#output "name" {
+#  description = "The name of the VPC specified as argument to this module"
+#  value       = var.name
+#}
