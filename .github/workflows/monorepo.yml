@@ -7,13 +7,11 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
     paths:
-      - 'networking/alb/**'
-      - 'networking/bastion-host/**'
+      - 'terraform/modules/**'
   pull_request_target:
     types: [closed]
     paths:
-      - 'networking/alb/**'
-      - 'networking/bastion-host/**'
+      - 'terraform/modules/**'
 
 jobs:
   detect:
@@ -63,7 +61,7 @@ jobs:
             const directories = Array.from(new Set(raw
               .filter(x => !x.startsWith('.'))
               .filter(x => x.includes('/'))
-              .map(x => x.split('/')[0])
+              .map(x => x.split('terraform/modules/')[1].split('/')[0])
             ));
             if (directories.length < 1) return {};
             return {
@@ -197,11 +195,11 @@ jobs:
           ./terraform-docs markdown table \
             --output-file "$(pwd)"/output/documentation.md \
             --sort-by required \
-            'src/${{ matrix.directory }}'
+            'src/terraform/modules/${{ matrix.directory }}'
 
       - name: Bundle up Terraform module
-        working-directory: src/${{ matrix.directory }}
-        run: zip -vr ../../output/terraform-module.zip *
+        working-directory: src/terraform/modules/${{ matrix.directory }}
+        run: zip -vr ../../../../output/terraform-module.zip *
 
       - name: Upload result artifacts
         uses: actions/upload-artifact@v2
