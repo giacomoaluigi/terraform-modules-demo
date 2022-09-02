@@ -14,6 +14,6 @@ output "role_unauthenticated" {
   value = aws_iam_role.kibana_unauth.arn
 }
 
-output "kibana_endpoint" {
+output "kibana_endpoint_the_controprova" {
   value = aws_cognito_user_pool.kibana.endpoint
 }
