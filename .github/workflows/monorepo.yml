@@ -7,11 +7,13 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
     paths:
-      - 'cognito/**'
+      - 'networking/alb/**'
+      - 'networking/bastion-host/**'
   pull_request_target:
     types: [closed]
     paths:
-      - 'cognito/**'
+      - 'networking/alb/**'
+      - 'networking/bastion-host/**'
 
 jobs:
   detect:
