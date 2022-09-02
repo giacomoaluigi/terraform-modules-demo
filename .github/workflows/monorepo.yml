@@ -6,8 +6,12 @@ concurrency:  #avoid concurrent runs on label events, might cause issues on supe
 on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
+    paths:
+      - 'cognito/**'
   pull_request_target:
     types: [closed]
+    paths:
+      - 'cognito/**'
 
 jobs:
   detect:
