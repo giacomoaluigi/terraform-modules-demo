@@ -16,7 +16,7 @@ output "target_group_arn" {
   })
 }
 
-output "alb_arn_suffix" {
+output "alb_arn_suffix_test_trigger" {
   description = "The ARN suffix for use with CloudWatch Metrics."
   value       = aws_lb.this.arn_suffix
 }
