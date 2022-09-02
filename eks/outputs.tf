@@ -45,6 +45,6 @@ output "ebs_csi_role_arn" {
 }
 
 output "efs_csi_role_arn" {
-  description = "The ARN of the efs-csi role."
+  description = "The ARN of the efs-csi role. the test"
   value       = aws_iam_role.eks["efs-csi"].arn
 }
